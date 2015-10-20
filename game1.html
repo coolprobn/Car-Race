@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#game-window{
+		position: absolute;
+		height: 400px;
+		width: 400px;
+		overflow: hidden;
+	}
+	#road{
+		position: relative;
+		height: 100000px;
+		width: 400px;
+		left: 0;
+		background: url(https://raw.githubusercontent.com/prakash014/Car-Race/master/images/track.jpg) repeat-y;
+	}
+	</style>
+</head>
+<body>
+	  <div id="game-window"><div id="road"></div></div>
+	  	
+	 
+
+<script type="text/javascript">
+var road = document.getElementById('road');	
+var gameWindow =document.getElementById('game-window')
+
+var posTop = -100000;
+
+var animate = function(){
+	
+	posTop += 10;
+	road.style.top = posTop + 'px';
+	gameWindow.appendChild(road);
+};
+
+setInterval(animate, 10);
+</script>
+</body>
+</html>
