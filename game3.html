@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+    #game-window{
+		position: absolute;
+		height: 400px;
+		width: 400px;
+		border: 1px solid black;
+	}
+	#hero-car{
+		position: relative;
+		height: 100px;
+		width: 100px;
+		left: 0;
+		top: 300px;
+		background-color: red;
+	}
+
+	</style>
+</head>
+<body>
+<div id="game-window"></div>
+
+<script type="text/javascript">
+    var gameWindow = document.getElementById('game-window');
+    var heroCar = document.createElement('div');	
+	heroCar.id = 'hero-car';
+
+    var posLeft = 0;  
+
+ document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+       // alert('Left was pressed');
+       left();
+    }else if(event.keyCode == 39) {
+       // alert('Right was pressed');
+       right();
+    }
+});
+
+var left = function(){
+    
+    if (posLeft >= 100) {
+	    posLeft -= 100;
+        };
+	heroCar.style.left = posLeft + 'px';
+	gameWindow.appendChild(heroCar);
+};
+
+var right = function(){
+	if(posLeft <= 200){
+	posLeft += 100;	
+	}    
+	heroCar.style.left = posLeft + 'px';
+	gameWindow.appendChild(heroCar);
+};
+
+
+
+</script>
+</body>
+</html>

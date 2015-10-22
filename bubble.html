@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+          #holder {
+            height: 400px;
+            width: 400px;
+            background-color: black;
+            position: absolute;
+        
+
+          }
+
+          #bubble {
+          	height: 10px;
+          	width: 10px;
+            border-radius: 10px;
+            background-color: red;
+            position: relative;
+          }
+
+	</style>
+</head>
+<body>
+ <div id="holder"></div>
+
+ <script type="text/javascript">
+  var holder = document.getElementById('holder');
+ // var bubble = document.getElementById('bubble');
+
+  /*var posTop = 0;
+    var posLeft = 0;
+    var change = 0;*/
+
+  var createBubble = function  () {
+  	  /*if(posTop == 0){ 
+         change = 10;
+  	     };
+  	  if(posTop == 400){
+         change = -10; 
+         }
+  	  posTop += change;
+
+  	 // posLeft += 10;*/
+      var random = Math.random() * 400;
+      var bubble = document.createElement('div');
+      bubble.id = 'bubble';
+     // var bubble = document.getElementById('bubble');
+
+  	  bubble.style.top = random + 'px';  
+  	  bubble.style.left = random +'px';
+
+  	  holder.appendChild(bubble);
+  	  
+
+  };
+
+  setInterval(createBubble, 20);
+ </script>
+</body>
+</html>

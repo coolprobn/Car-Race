@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+    #game-window{
+		position: absolute;
+		height: 400px;
+		width: 400px;
+	}
+	#enemy{
+		position: relative;
+		height: 100px;
+		width: 100px;
+		left: 0;
+		top: 0;
+		background-color: red;
+	}
+
+	</style>
+</head>
+<body>
+<div id="game-window"></div>
+
+<script type="text/javascript">
+    var gameWindow = document.getElementById('game-window');
+    
+
+ document.addEventListener('keydown', function(event) {
+    if(event.keyCode ==38){
+    	// up key was pressed
+    	up();
+    }else if(event.keyCode == 37) {
+       // alert('Left was pressed');
+    }else if(event.keyCode == 39) {
+       // alert('Right was pressed');
+    }
+});
+
+var up = function(){
+	var enemy = document.createElement('div');	
+	enemy.id = 'enemy';
+	var random = Math.floor((Math.random() *3) +0)*100;
+
+	enemy.style.left = random + 'px';
+	gameWindow.appendChild(enemy);
+};
+
+
+
+
+
+</script>
+</body>
+</html>
